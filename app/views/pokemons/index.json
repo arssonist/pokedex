@@ -1,0 +1,5 @@
+/*<h1>Pokemons#index</h1>
+
+  <% @pokemons.each do |pokemon|%>
+    <p><%= pokemon.name %> </p>
+  <%end%>*/
