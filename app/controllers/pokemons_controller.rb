@@ -6,7 +6,8 @@ class PokemonsController < ApplicationController
 
       respond_to do |format|
         format.html
-        format.json
+         format.json
+         #{ render json: @pokemons.as_json(only: [:name, :image_url]) }
       end
 
   end
@@ -16,8 +17,9 @@ class PokemonsController < ApplicationController
     @pokemon = Pokemon.find(params[:id])
 
     respond_to do |format|
-      format.html { render @pokemon }
-      format.json { render json: @pokemon }
+      format.html { render @pokemons }
+      format.json
+      #{ render json: @pokemon.as_json(only: [:name, :image_url]) }
     end
 
   end
@@ -30,8 +32,8 @@ class PokemonsController < ApplicationController
 
     # use respond_to to give back data in a certain format that you have listed in the block
     respond_to do |format|
-      format.html{ render @pokemnon }
-      format.json { render json: @pokemnon }
+      format.html { render @pokemon }
+      format.json { render json: @pokemon }
     end
 
   else
